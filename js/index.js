@@ -6,6 +6,7 @@
 
 import { sidebar } from "./sidebar.js";
 import { api_key, imageBaseURL, fetchDataFromServer } from "./api.js";
+import { createMovieCard } from './movie-card.js'
 
 const pageContent = document.querySelector("[page-content]");
 
@@ -22,7 +23,7 @@ const homePageSections = [
         path: "/movie/upcoming"
     },
     {
-        title: "Today\'s Trending Movies",
+        title: "Week\'s Trending Movies",
         path: "/trending/movie/week"
     },
     {
@@ -156,6 +157,14 @@ const heroBanner = function ({ results: movieList }) {
     pageContent.appendChild(banner);
 
     addHeroSlide();
+
+    /**
+     * fetch data for home page sections (top rated , upcoming , trending)
+     */
+
+    for (const { title, path } of homePageSections) {
+        fetchDataFromServer(`https://api.themoviedb.org/3${path}?api_key=${api_key}&page=1`, createMovieList, title);
+    }
 }
 
 /**
@@ -189,4 +198,37 @@ const addHeroSlide = function () {
 
     addEventOnElements(sliderControls, "click", sliderStart);
 
+}
+
+
+const createMovieList = function ({ results: movieList }, title) {
+    const movieListElem = document.createElement("section");
+
+    movieListElem.classList.add("movie-list");
+    movieListElem.ariaLabel = `${title}`;
+
+    movieListElem.innerHTML = html`
+        <div class="title-wrapper">
+            <h3 class="title-large">
+                ${title}
+            </h3>
+        </div>
+
+        <div class="slider-list">
+            <div class="slider-inner">
+
+                
+
+            </div>
+        </div>
+
+    `;
+
+    for (const movie of movieList) {
+        const movieCard = createMovieCard(movie); // called from movie_card.js
+
+        movieListElem.querySelector(".slider-inner").appendChild(movieCard);
+
+    }
+    pageContent.appendChild(movieListElem);
 }
