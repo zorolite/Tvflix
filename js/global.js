@@ -37,3 +37,14 @@ container.addEventListener("wheel", function (e) {
         e.preventDefault();
     }
 });
+
+
+
+/**
+ * store movieId in `localStorage' when you click any movie card
+ */
+
+
+const getMovieDetail = function (movieId) {
+    window.localStorage.setItem("movieId", String(movieId));
+}
