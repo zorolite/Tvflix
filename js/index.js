@@ -207,7 +207,7 @@ const createMovieList = function ({ results: movieList }, title) {
     movieListElem.classList.add("movie-list");
     movieListElem.ariaLabel = `${title}`;
 
-    movieListElem.innerHTML = html`
+    movieListElem.innerHTML = `
         <div class="title-wrapper">
             <h3 class="title-large">
                 ${title}
