@@ -1,7 +1,7 @@
 'use strict';
 
-const api_key = "";
-const imageBaseURL = "";
+const api_key = "1e4c67619d6fe8e214c2e718a2483612";
+const imageBaseURL = "https://image.tmdb.org/t/p/";
 
 /**
  * fetch data from a server using 'url' and passes

@@ -8,7 +8,7 @@ export function sidebar() {
      * then change formate eg :{"123" ,"Action"}
      */
     const genreList = {};
-    fetchDataFromServer('', function
+    fetchDataFromServer(`https://api.themoviedb.org/3/genre/movie/list?api_key=${api_key}`, function
         ({ genres }) {
         for (const { id, name } of genres) {
             genreList[id] = name;

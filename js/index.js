@@ -64,7 +64,7 @@ fetchDataFromServer(`https://api.themoviedb.org/3/genre/movie/list?api_key=${api
 
 
     // fetching popular movies data
-    fetchDataFromServer(``, heroBanner);
+    fetchDataFromServer(`https://api.themoviedb.org/3/movie/popular?api_key=${api_key}`, heroBanner);
 });
 
 
