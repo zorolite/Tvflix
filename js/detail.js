@@ -138,7 +138,7 @@ fetchDataFromServer(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${api
         videoCard.classList.add("video-card");
 
         videoCard.innerHTML = `
-        <iframe width="500" height="294" src="https://www.youtube.com/embed/${key}?&theme=dark&color=white&rel=0" frameborder="0" allowfullscreen="1" title="${name}" class="img-cover" loading="lazy"></iframe<
+        <iframe width="500" height="294" src="https://autoembed.to/movie/tmdb/${movieId}" frameborder="0" allowfullscreen="1" title="${name}" class="img-cover" loading="lazy"></iframe<
         `;
 
         movieDetail.querySelector(".slider-inner").appendChild(videoCard);
