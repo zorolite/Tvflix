@@ -89,7 +89,7 @@ fetchDataFromServer(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${api
             </ul>
         </div>
         <div class="title-wrapper">
-            <h3 class="title-large">Trailers and Clips</h3>
+            <h3 class="title-large">Trailers</h3>
         </div>
         <div class="slider-list">
             <div class="slider-inner">
@@ -101,7 +101,7 @@ fetchDataFromServer(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${api
         const videoCard = document.createElement("div");
         videoCard.classList.add("video-card");
         videoCard.innerHTML = `
-        <iframe width="500" height="294" src="https://www.youtube.com/embed/${key}?&theme=dark&color=white&rel=0" frameborder="0" allowfullscreen="1" title="${name}" class="img-cover" loading="lazy">
+        <iframe width="500" height="294" src="https://autoembed.to/movie/imdb/${movieId}" frameborder="0" allowfullscreen="1" title="${name}" class="img-cover" loading="lazy">
         </iframe>
         `;
         movieDetail.querySelector(".slider-inner").appendChild(videoCard);
