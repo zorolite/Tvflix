@@ -32,10 +32,12 @@ const getDirectors = (crewList) => {
 
     return directorList.join(", ")
 }
-// Return only Trailers and Teaser of Array
 const filterVideos = (videoList) => {
-  return videoList.filter(({ type,site }) => (type == "Trailer" || type == "Teaser") && site == "YouTube"); 
-}
+  const filteredVideos = videoList.filter(
+    ({ type, site }) => (type === "Trailer" || type === "Teaser") && site === "YouTube"
+  );
+  return filteredVideos.slice(0, 1); // Return only the first video
+};
 fetchDataFromServer(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${api_key}&append_to_response=casts,videos,images,releases`,function(movie){
     const {
         backdrop_path,
