@@ -40,8 +40,8 @@ const getDirectors = function (crewList) {
 }
 
 // return only trailers and teasers as array
-const filterVideos = function (videoList) {
-    return videoList.filter(({ type, site }) => (type === "Movie" || type === "Teaser") && site === "autoembed");
+const filterVideos = function (video) {
+    return video.filter(({ type, site }) => (type === "teaser" || type === "Teaser") && site === "Youtube");
 }
 sidebar();
 
