@@ -34,7 +34,7 @@ export function sidebar() {
 
         <div class="sidebar-footer">
             <p class="copyright">
-                Copyright 2023 <a href="https://github.com/SunilBarewar">Sunil Barewar</a>
+                Copyright 2023 <a href="">Madmax</a>
             </p>
 
             <img src="./images/tmdb-logo.png" width="130" height="17" alt="the movie database logo">
