@@ -40,7 +40,7 @@ const getDirectors = function (crewList) {
 }
 
 // return only trailers and teasers as array
-const filterVideos = function (videoList) {
+const filterVieos = function (videoList) {
     return videoList.filter(({ type, site }) => (type === "Trailer" || type === "Teaser") && site === "YouTube");
 }
 sidebar();
@@ -120,7 +120,7 @@ fetchDataFromServer(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${api
         </div>
 
         <div class="title-wrapper">
-            <h3 class="title-large">Trailers and Clips</h3>
+            <h3 class="title-large">Watch Here</h3>
         </div>
 
         <div class="slider-list">
